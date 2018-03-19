@@ -1,0 +1,305 @@
+#header {
+margin: 0 auto;
+position: relative;
+width: 100%;
+height: auto;
+z-index: 300;
+background: #000;
+}
+.navbar-default .navbar-nav > li > a {
+color: #fff;
+border-radius: 0px;
+}
+#topbar {
+background: #B20000;
+color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: #B20000;
+}
+#back-to-top {
+background-color: #B20000;
+}
+.text-theme {
+color: #B20000;
+text-shadow:0.5px 0.5px #fff;
+}
+.btn-theme {
+color: #ffffff;
+background: #B20000;
+}
+.widebox-black-content {
+position: relative;
+padding: 100px 50px;
+background: #000;
+z-index: 1;
+}
+#footer {
+position: relative;
+margin: 0 auto;
+width: 100%;
+min-height: 100px;
+padding: 100px 0 90px;
+color: #fff;
+background: #000;
+}
+.footer-list li a {
+color: #fff;
+}
+.titleline-icon {
+position: relative;
+max-width: 100px;
+border-top: 1px solid #000;
+margin: 20px auto 20px;
+}
+.footer-list li a:hover {
+color: #B20000;
+text-decoration: none;
+}
+.titleline-icon::after {
+position: absolute;
+top: -10px;
+left: 0;
+right: 0;
+margin: auto;
+font-family: 'FontAwesome';
+content: "\f192";
+font-size: 20px;
+line-height: 1;
+color: #b20000;
+text-align: center;
+vertical-align: middle;
+width: 40px;
+height: 20px;
+background: #ffffff;
+}
+.titleline {
+position: relative;
+max-width: 50px;
+border-top: 1px solid #ccc;
+margin: 0 auto 20px 0;
+}
+#copyright {
+position: relative;
+width: 100%;
+min-height: 72px;
+padding: 20px 0px;
+color: #fff;
+background: #333;
+}
+.copyright {
+margin: 5px auto;
+color: #fff;
+font-size: 12px;
+}
+.lead {
+font-size: 16px;
+color: #000;
+}
+#footer h4 {
+color: #fff;
+}
+.button-group .button:active, .button-group2 .button:active, .button-group3 .button:active, .button-group4 .button:active, .button-group .button.is-checked, .button-group2 .button.is-checked, .button-group3 .button.is-checked, .button-group4 .button.is-checked {
+border: 1px solid #000;
+font-weight: bold;
+background: #B20000;
+color: #ffffff !important;
+border-radius: 0px;
+}
+.button-group .button:hover, .button-group2 .button:hover, .button-group3 .button:hover, .button-group4 .button:hover {
+color: #B20000;
+border: 1px solid #000;
+background: transparent;
+border-radius: 0px;
+}
+body {
+font-family: 'Roboto', sans-serif;
+color: #333;
+font-weight: normal;
+font-size: 14px;
+line-height: 1.6;
+}
+a {
+text-decoration: none;
+color: #fff;
+}
+h5 {
+font-size: 14px;
+text-align: center;
+text-transform: uppercase;
+}
+
+h3 {
+font-size: 24px;
+color:#fff;
+}
+
+.sidebar-info li {
+padding: 8px 2px;
+color: #fff;
+}
+
+.white {color:#fff;}
+
+.pagetitle-overlay, .effect-phoebe, .da-thumbs div {
+background:#b40000;
+}
+
+
+.sticky-header .header-shadow {
+display: inline-block;
+border-bottom: 1px solid #ccc;
+bottom: 0;
+}
+
+.not-found a {
+color: #333;
+}
+
+.not-found h3 {
+font-size: 24px;
+color: #333;
+}
+.sidebar a:hover, a:focus {
+color: #ddd;
+text-decoration: underline;
+}
+
+.testimonial p {
+padding: 40px;
+color: #fff;
+}
+
+.titleline-center {
+position: relative;
+max-width: 50px;
+border-top: 1px solid #ddd;
+margin: 0 auto 20px;
+}
+
+#testimonials {padding: 0px 0 50px 0;}
+
+#call-to-action {
+border-top:5px solid #ddd;
+border-bottom:5px solid #ddd;
+}
+
+.cta {
+font-size: 21px;
+padding-top: 20px;
+}
+
+.cta-button {padding-top: 30px;}
+
+#testimonials .parallax-black {
+background-image: url(../images/features/testimonial-image.png);
+background-attachment: fixed;
+background-position: center center;
+background-repeat: no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+position: relative;
+}
+
+.statement {
+font-size: 16px;
+line-height:20px;
+font-weight:bold;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+#topbar {
+padding-bottom: 30px;
+}
+.topbar-contact {
+font-size: 11px;
+margin-bottom: -50px;
+}
+.navbar-default .navbar-toggle {
+border-color: #ccc;
+background-color: #b40000;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: #000;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+background-color: #b40000;
+}
+
+.button-group .button {
+padding: 4px;
+font-size: 10px;
+}
+
+.photo-title.text-left, .photo-title2.text-left, .photo-title3.text-left {
+text-align: center;
+padding: 20px 0 10px 0;
+border-bottom: 1px solid #ddd;
+}
+	
+.testimonial p {
+    color: #fff;
+}	
+.cta {
+    line-height: 25px;
+    text-align: center;
+}
+.statement {
+    text-align: center;
+}
+	
+.cta-button {
+padding-top: 30px;
+text-align: center;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+#topbar {
+padding-bottom: 30px;
+}
+.topbar-contact {
+font-size: 11px;
+margin-bottom: -50px;
+}
+.navbar-default .navbar-toggle {
+border-color: #000;
+background-color: #b40000;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: #000;
+border-color:#fff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: #000;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+background-color: #b40000;
+}
+.testimonial p {
+    color: #fff;
+}	
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+.navbar-default .navbar-toggle {
+border-color: #000;
+background-color: #b40000;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background-color: #000;
+border-color:#fff;
+}
+.testimonial p {
+    color: #fff;
+}	
+
+}
