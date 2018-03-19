@@ -1,0 +1,618 @@
+
+<!DOCTYPE HTML>
+<html>
+  	<head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width">
+  	<title>Welcome To Mahan Aerial Photography</title>
+  	<meta name="description" content="">
+  	<meta name="keywords" content="">
+  	<link rel="shortcut icon" href="images/favicon.png">
+  	<link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+  	<link href="css/custom.css" media="screen" rel="stylesheet" type="text/css">
+  	<link href="css/video.css" media="screen" rel="stylesheet" type="text/css">
+  	<script src="js/jquery-1.7.2.min.js"></script>
+  	<script src="js/html5.js"></script>
+  	<script src="js/main.js"></script>
+  	<script src="js/jquery.carouFredSel-6.2.0-packed.js"></script>
+  	<script src="js/jquery.touchSwipe.min.js"></script>
+  	<script src="js/checkbox.js"></script>
+  	<script src="js/radio.js"></script>
+  	<script src="js/selectBox.js"></script>
+  	<script src="js/jquery.jqzoom-core.js"></script>
+  	<style>
+/* Settings - feel free to play with these */
+
+
+/**
+ * This part should be set separately for each video
+ * if there are multiple videos in your site.
+ * I.e. '.demo-video-wrapper' is the name of this particular video
+ */
+.demo-video-wrapper {
+	background-image: url(https://d3k5xyayaartr5.cloudfront.net/_assets/home-video/beach-waves-loop.jpg);
+}
+/* Video overlay and content */
+.video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	pointer-events: none; /* Allows right click menu on the video */
+	background: url($overlay_pattern) left top repeat;
+ opacity: $overlay_opacity;
+}
+.video-hero--content {
+	position: relative;
+	text-align: center;
+	color: #FFF;
+	margin: 150px 0;
+	text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+.video-hero--content h2 {
+	font-size: 34px;
+	margin: 0 0 10px;
+	color: #fff;
+}
+.video-hero--content p {
+	font-size: 20px;
+	margin: 0;
+}
+.jquery-background-video-wrapper {
+	position: relative;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+.jquery-background-video {
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	-o-object-fit: contain;
+	object-fit: contain;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+/**
+ * Fade in videos
+ * Note the .js class - so non js users still
+ * see the video
+ */
+.js .jquery-background-video {
+	opacity: 0;
+	-webkit-transition: opacity 300ms linear;
+	transition: opacity 300ms linear;
+}
+.js .jquery-background-video.is-visible {
+	opacity: 1;
+}
+/**
+ * Pause/play button
+ */ 
+.jquery-background-video-pauseplay {
+	position: absolute;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	width: 20px;
+	height: 20px;
+	top: 15px;
+	right: 15px;
+	padding: 0;
+	cursor: pointer;
+	outline: none !important;
+}
+.jquery-background-video-pauseplay span {
+	display: none;
+}
+.jquery-background-video-pauseplay:after, .jquery-background-video-pauseplay:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.jquery-background-video-pauseplay.play:before {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 15px solid #FFF;
+}
+.jquery-background-video-pauseplay.pause:before, .jquery-background-video-pauseplay.pause:after {
+	border-top: 10px solid #FFF;
+	border-bottom: 10px solid #FFF;
+	border-left: 5px solid #FFF;
+}
+.jquery-background-video-pauseplay.pause:after {
+	left: 10px;
+}
+</style>
+  	</head>
+  	<body>
+    <div class="container_12">
+      <div id="top">
+        <div class="grid_4 ">
+          <div class="phone_top"> <span> <a href="mailto:Flight@Mahanaerialphotography.com">Flight@Mahanaerialphotography.com</a></span> </div>
+
+          <!-- .phone_top --> 
+        </div>
+        <!-- .grid_3 -->
+        
+        <div class="grid_4">
+          <div class="welcome"> Welcome to <span class="black">Mahan Aerial Photography.</span> </div>
+          <!-- .welcome --> 
+        </div>
+        <!-- .grid_6 -->
+        
+        <div class="grid_4">
+          <div class="soc"> <a class="google" href="#"></a> <a class="twitter" href="#"></a> <a class="facebook" href="#"></a> </div>
+          <!-- .soc --> 
+        </div>
+        <!-- .grid_3 --> 
+      </div>
+      <!-- #top -->
+      
+      <div class="clear"></div>
+      <header id="branding">
+        <div class="grid_4">
+          <hgroup>
+            <h1 id="site_logo" ><a href="/" title=""><img src="images/logo.png" alt="Mahan Photography"/></a></h1>
+
+          </hgroup>
+        </div>
+        <!-- .grid_3 -->
+        
+        <div class="grid_4">
+        <h2 id="site_description">"Photography AT ITS BEST"</h2>
+        </div>
+        <!-- .grid_3 -->
+        
+        <div class="grid_4">
+          <nav class="private">
+            <ul>
+              <li><a href="/services.html">Services</a></li>
+              <li class="separator">|</li>
+              <li><a href="/art_gallery.html">Art Gallery</a></li>
+              <li class="separator">|</li>
+              <li><a href="/contact_us.html">Contact Us</a></li>
+            </ul>
+          </nav>
+          <!-- .private --> 
+        </div>
+        <!-- .grid_6 --> 
+      </header>
+      <!-- #branding --> 
+    </div>
+    <!-- .container_12 -->
+
+    <div class="clear"></div>
+    <div id="block_nav_primary">
+      <div class="container_12">
+        <div class="grid_12">
+          <nav class="primary"> <a class="menu-select" href="#">Menu</a>
+            <ul>
+              <li class="curent"><a href="/">Home</a></li>
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="photographers.html">Photographers</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="art_gallery.html">Art Gallery</a></li>
+              <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+          </nav>
+          <!-- .primary --> 
+        </div>
+        <!-- .grid_12 --> 
+      </div>
+      <!-- .container_12 --> 
+    </div>
+    <!-- .block_nav_primary -->
+
+    <div class="clear"></div>
+    <div class="container_12">
+      <div class="grid_12">
+        <div class="video-hero jquery-background-video-wrapper demo-video-wrapper">
+          <video class="jquery-background-video" autoplay muted loop poster="https://d3k5xyayaartr5.cloudfront.net/_assets/home-video/beach-waves-loop.jpg">
+            <source src="video/Home-Page-Video.mp4" type="video/mp4">
+          </video>
+          <div class="video-overlay"></div>
+          <div class="page-width">
+            <div class="video-hero--content">
+              <h2>Welcome To</h2>
+              <p>Mahan Aerial Photography</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .grid_12 --> 
+    </div>
+    <!-- .container_12 -->
+
+    <div class="clear"></div>
+    <section id="main" class="home">
+      <div class="container_12">
+        <div id="top_button">
+          <div class="grid_4"> <a href="art_gallery.html" class="button_block best_price">
+            <h2>Photos</h2>
+            </a><!-- .best_price --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="grid_4"> <a href="photographers.html" class="button_block new_smells">
+            <h2>PHOTOGRAPHERS</h2>
+            </a><!-- .new smells --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="grid_4"> <a href="services.html" class="button_block only_natural">
+            <h2>SERVICES</h2>
+            </a><!-- .only_natural --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="clear"></div>
+        </div>
+        <!-- #top_button -->
+        
+        <div class="clear"></div>
+        <div class="carousel">
+          <div class="c_header">
+            <div class="grid_10">
+              <h2>Best Sellers</h2>
+            </div>
+            <!-- .grid_10 -->
+            
+            <div class="grid_2"> <a id="next_c1" class="next arows" href="#"><span>Next</span></a> <a id="prev_c1" class="prev arows" href="#"><span>Prev</span></a> </div>
+            <!-- .grid_2 --> 
+          </div>
+          <!-- .c_header -->
+          
+          <div class="list_carousel">
+            <ul id="list_product" class="list_product">
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"> <img src="images/staff/john-work/1000.jpg" alt="" title="" /> </a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #1000</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/john-work/1001.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #1001</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/john-work/1004.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #1004</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/john-work/1008.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #1008</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/john-work/1010.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #1010</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+            </ul>
+            <!-- #list_product --> 
+          </div>
+          <!-- .list_carousel --> 
+        </div>
+        <!-- .carousel -->
+        
+        <div class="carousel">
+          <div class="c_header">
+            <div class="grid_10">
+              <h2>Featured Images</h2>
+            </div>
+            <!-- .grid_10 -->
+            
+            <div class="grid_2"> <a id="next_c2" class="next arows" href="#"><span>Next</span></a> <a id="prev_c2" class="prev arows" href="#"><span>Prev</span></a> </div>
+            <!-- .grid_2 --> 
+          </div>
+          <!-- .c_header -->
+          
+          <div class="list_carousel">
+            <ul id="list_product2" class="list_product">
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9003.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9003</h3>
+                  <div class="cart">
+
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9008.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9008</h3>
+                  <div class="cart">
+       
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9010.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9010</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9011.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9011</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9012.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9012</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9016.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9016</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9013.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9013</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/erik-work/9014.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #9014</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/mark-work/0100.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #0100</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/mark-work/0101.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #0101</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/mark-work/0102.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #0102</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+              <li class="">
+                <div class="grid_3 product">
+                  <div class="prev"> <a href="art_gallery.html"><img src="images/staff/mark-work/0103.jpg" alt="" title="" /></a> </div>
+                  <!-- .prev -->
+                  <h3 class="title">Id #0103</h3>
+                  <div class="cart">
+                    <a href="order.html" class="button">Order Now</a> </div>
+                  <!-- .cart --> 
+                </div>
+                <!-- .grid_3 --> 
+              </li>
+            </ul>
+            <!-- #list_product2 --> 
+          </div>
+          <!-- .list_carousel --> 
+        </div>
+        <!-- .carousel -->
+        
+        <div id="content_bottom">
+          <div class="grid_4">
+            <div class="bottom_block about_as">
+              <h3>About Us</h3>
+              <p>Mahan Aerial Photography specializes in the capture of digital media for use in video productions, art work, and commercial applications.</p>
+              <p> Our Objective: Provide consumers with high quality art work and commercial solutions at a reasonable cost.</p>
+              <br>
+            </div>
+            <!-- .about_as --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="grid_4">
+            <div class="bottom_block news">
+              <h3>Our Services</h3>
+              <ol>
+                <li><strong>Real Estate</strong><br>
+                  Realtor's and Homeowners</li>
+                <li><strong>Construction</strong><br>
+                  Construction Managers &amp; Contractors </li>
+                <li><strong>Engineering</strong><br>
+                  Engineers &amp; Project Managers </li>
+              </ol>
+              <br>
+            </div>
+            <!-- .news --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="grid_4">
+            <div class="bottom_block newsletter">
+              <h3> Events</h3>
+              <p>Attention Bride’s, Groom's, Graduate’s, and Model’s, now is your time to shine!</p>
+              <p>Take advantage of our professional event and portrait photographers. Currently offered with Jonathan Maldonado in Buffalo, NY.</p>
+              <br>
+            </div>
+            <!-- .newsletter --> 
+          </div>
+          <!-- .grid_4 -->
+          
+          <div class="clear"></div>
+        </div>
+        <!-- #content_bottom -->
+        <div class="clear"></div>
+      </div>
+      <!-- .container_12 --> 
+    </section>
+    <!-- #main -->
+
+    <div class="clear"></div>
+    <footer>
+      <div class="f_navigation">
+        <div class="container_12">
+          <div class="grid_3">
+            <h3>Contact Us</h3>
+            <ul class="f_contact">
+              <li>Jarrettsville, Maryland, 21084.</li>
+              <li>flight@mahanaerialphotography.com</li>
+            </ul>
+            <!-- .f_contact --> 
+          </div>
+          <!-- .grid_3 -->
+          
+          <div class="grid_3">
+            <h3>Canvas</h3>
+            <nav class="f_menu">
+           <p>Whether you are looking for the perfect gift or a stunning addition to your home decor, our canvas photo prints are 100% guaranteed to delight.</p>
+            </nav>
+            <!-- .private --> 
+          </div>
+          <!-- .grid_3 -->
+          
+          <div class="grid_3">
+            <h3>Our Services</h3>
+            <nav class="f_menu">
+              <ul>
+                <li><a href="services.html">Real Estate</a></li>
+                <li><a href="services.html">Consruction</a></li>
+                <li><a href="services.html">Engineering</a></li>
+              </ul>
+            </nav>
+            <!-- .private --> 
+          </div>
+          <!-- .grid_3 -->
+          
+          <div class="grid_3">
+            <h3>Puzzle</h3>
+            <nav class="f_menu">
+       <p> Are you looking for something special or interesting? Nothing can be a better option than a tailor-made Jigsaw Puzzle.” Additionally changing the Titles to “Canvas” and “Puzzles”.</p>
+            </nav>
+            <!-- .private --> 
+          </div>
+          <!-- .grid_3 -->
+          
+          <div class="clear"></div>
+        </div>
+        <!-- .container_12 --> 
+      </div>
+      <!-- .f_navigation -->
+      
+      <div class="f_info">
+        <div class="container_12">
+          <div class="grid_6">
+            <p class="copyright">© Mahan Aerial Photography. 2017</p>
+          </div>
+          <!-- .grid_6 -->
+          
+          <div class="grid_6" style="text-align: right">
+            <p class="copyright">Powered By <a href="http://www.birchfield-design.com" target="_blank">Birchfield-Design</a></p>
+          </div>
+          <!-- .grid_6 -->
+          
+          <div class="clear"></div>
+        </div>
+        <!-- .container_12 --> 
+      </div>
+      <!-- .f_info --> 
+    </footer>
+</body>
+</html>
